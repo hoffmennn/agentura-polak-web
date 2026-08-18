@@ -28,9 +28,8 @@ function isActive(to: string) {
 <template>
   <header class="sticky top-0 z-50 border-b-2 border-border-strong bg-surface">
     <div class="container-page flex h-20 flex-wrap items-center justify-between gap-3">
-      <NuxtLink to="/" class="flex flex-col leading-tight no-underline">
-        <span class="text-[22px] font-bold tracking-tight text-brand-primary font-display">AGENTÚRA POLÁK</span>
-        <span class="text-eyebrow font-semibold uppercase tracking-widest text-ink-subtle">Partner poisťovne UNIQA</span>
+      <NuxtLink to="/" class="flex flex-col gap-1 leading-tight no-underline">
+        <img src="/logo.png" alt="Agentúra Polák" class="h-16 w-auto">
       </NuxtLink>
 
       <nav class="flex h-full flex-wrap items-center gap-7">
@@ -38,7 +37,7 @@ function isActive(to: string) {
           v-for="link in navLinks"
           :key="link.label"
           :to="link.to"
-          class="flex h-full items-center pt-1 text-nav font-semibold tracking-wide no-underline transition-colors duration-fast"
+          class="flex h-full items-center pt-1 text-nav font-semibold tracking-wide no-underline transition-colors duration-150"
           :class="
             isActive(link.to)
               ? 'border-b-4 border-brand-primary text-brand-primary'
@@ -49,7 +48,7 @@ function isActive(to: string) {
         </NuxtLink>
       </nav>
 
-      <NuxtLink to="/#kontaktny-formular" class="btn-primary">Nezáväzný dopyt</NuxtLink>
+      <NuxtLink to="/#kontaktny-formular" class="btn-primary">Kontaktuje nás!</NuxtLink>
     </div>
   </header>
 </template>
