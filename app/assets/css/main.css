@@ -1,0 +1,201 @@
+/**
+ * Agentúra Polák — Design System
+ * ================================
+ * Single source of truth for design tokens, imported once via
+ * `nuxt.config.ts` (`css: ['~/assets/css/main.css']`) once Tailwind v4
+ * is installed (see CLAUDE.md, Phase 2).
+ *
+ * Tokens below were reverse-engineered from the Claude Design prototype
+ * (Kontakt.dc.html / Landing.dc.html / O-nas.dc.html) — every value maps
+ * to a hex/px/font actually used in the prototype's inline styles, not a
+ * guess. Where the prototype repeated the same raw value for the same
+ * purpose across pages, it became one named token here.
+ *
+ * Visual language: flat, sharp-cornered, editorial-financial ("brutalist
+ * insurance"). No border-radius, no box-shadow anywhere in the source —
+ * hierarchy comes from 1–4px borders and color blocking instead. Keep
+ * that discipline: don't reach for `rounded-*` or `shadow-*` utilities
+ * when building components against this system.
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* ---------------------------------------------------------------
+   * Color — brand
+   * Two blues carry the whole brand: a deep "institutional" blue for
+   * headings/identity, and a brighter "action" blue for anything
+   * clickable. A third, cyan-leaning accent exists only inside the
+   * dark hero/form sections (Landing) for hover/focus states.
+   * --------------------------------------------------------------- */
+  --color-brand-primary: #004481;   /* logo, H1/H2 headings, active nav, icon accents */
+  --color-brand-accent: #005baa;    /* buttons, links, badges — the "clickable" blue */
+  --color-brand-accent-dark: #5fd4ff; /* hover/focus accent used only on dark surfaces */
+
+  /* ---------------------------------------------------------------
+   * Color — ink (text)
+   * --------------------------------------------------------------- */
+  --color-ink: #191c21;         /* primary body text color (root) */
+  --color-ink-muted: #414751;   /* paragraph copy, secondary text, strong borders */
+  --color-ink-subtle: #727783;  /* small caps labels, meta text, placeholders */
+
+  /* ---------------------------------------------------------------
+   * Color — borders & dividers
+   * --------------------------------------------------------------- */
+  --color-border-strong: #414751; /* 2px card/header/footer borders */
+  --color-border-subtle: #c1c6d3; /* 1px internal dividers */
+
+  /* ---------------------------------------------------------------
+   * Color — surfaces (light theme, the default across all pages)
+   * --------------------------------------------------------------- */
+  --color-surface: #f9f9ff;       /* page background */
+  --color-surface-card: #ffffff;  /* card/article background */
+  --color-surface-alt: #f2f3fa;   /* alternating section background, GDPR box */
+
+  /* ---------------------------------------------------------------
+   * Color — dark surfaces (Landing hero + interactive contact form)
+   * --------------------------------------------------------------- */
+  --color-surface-dark: #1a1c1e;      /* hero section + form section background */
+  --color-surface-dark-alt: #242830;  /* selected form tile background */
+  --color-line-dark: #414751;         /* progress-bar track, dark section rules */
+  --color-line-dark-subtle: #727783;  /* unselected form control borders */
+
+  /* ---------------------------------------------------------------
+   * Color — footer (its own near-black navy, distinct from surface-dark)
+   * --------------------------------------------------------------- */
+  --color-footer: #001c3b;
+  --color-footer-border: #074784;
+  --color-footer-text: #d5e3ff;
+  --color-footer-text-muted: #8dbbff;
+  --color-footer-text-link: #a6c8ff;
+
+  /* ---------------------------------------------------------------
+   * Color — feedback
+   * --------------------------------------------------------------- */
+  --color-danger: #ffb4ab; /* form validation error text (on dark bg) */
+
+  /* ---------------------------------------------------------------
+   * Typography
+   * Hanken Grotesk = display/headings (600 & 700 only).
+   * Inter = body/UI text (400/500/600). Loaded via @nuxt/fonts in
+   * Phase 2 — do not hardcode Google Fonts <link> tags in pages.
+   * --------------------------------------------------------------- */
+  --font-display: "Hanken Grotesk", ui-sans-serif, sans-serif;
+  --font-body: "Inter", ui-sans-serif, sans-serif;
+  --font-icon: "Material Symbols Outlined";
+
+  /* Type scale — every size actually used in the prototype, named by
+     role so components read as intent, not magic numbers. */
+  --text-eyebrow: 11px;      /* "Partner poisťovne UNIQA" tagline under logo */
+  --text-caption: 12px;      /* uppercase field labels, stat captions */
+  --text-label: 13px;        /* nav-adjacent labels, badges, footer links */
+  --text-nav: 14px;          /* nav links, buttons */
+  --text-body-sm: 15px;      /* form inputs */
+  --text-body: 16px;         /* default paragraph */
+  --text-body-lg: 17px;      /* step-1 form tile labels, success copy */
+  --text-h4: 18px;           /* "why us" item titles, card sub-headings */
+  --text-h3: 20px;           /* GDPR/form-card headings */
+  --text-h3-lg: 22px;        /* branch/service card headings */
+  --text-h2: 24px;           /* Kontakt branch card headings (larger variant) */
+  --text-h2-lg: 28px;        /* O nás profile heading, success-state heading */
+  --text-h1-section: 32px;   /* section headings ("Naše služby", "Prečo my") */
+  --text-icon-lg: 36px;      /* service-card icons */
+  --text-h1: 40px;           /* page H1 (Kontakt, O nás) */
+  --text-h1-hero: 44px;      /* Landing hero H1 */
+
+  /* ---------------------------------------------------------------
+   * Layout
+   * --------------------------------------------------------------- */
+  --container-max: 1280px;   /* every section wrapper caps here */
+  --container-pad: 20px;     /* horizontal gutter at all breakpoints */
+  --header-height: 80px;
+
+  /* ---------------------------------------------------------------
+   * Borders — this system has exactly three border weights, no radii
+   * --------------------------------------------------------------- */
+  --border-hairline: 1px;
+  --border-default: 2px;
+  --border-accent: 4px;   /* left-rule on hero text, active-nav underline */
+
+  /* ---------------------------------------------------------------
+   * Motion
+   * --------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;   /* hover color/border transitions */
+  --duration-form: 300ms;   /* progress bar width transition */
+}
+
+/* =====================================================================
+ * Base layer
+ * ===================================================================== */
+@layer base {
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+/* =====================================================================
+ * Reusable component classes
+ * These capture patterns that repeat byte-for-byte across all three
+ * prototype pages (buttons, bordered cards, section headings, badges).
+ * Pages/components should compose these rather than re-declaring the
+ * same border/padding/hover combo inline.
+ * ===================================================================== */
+@layer components {
+  /* Primary CTA — filled blue, inverts to outline on hover.
+     Used for every "Nezáväzný dopyt" / submit / main action button. */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-brand-accent
+           bg-brand-accent px-7 py-4 text-sm font-semibold uppercase tracking-wider
+           text-white transition-colors duration-150
+           hover:bg-transparent hover:text-brand-accent;
+  }
+
+  /* Same shape, for use on dark sections (hero / form) where hover
+     resolves to the cyan accent instead of the brand blue. */
+  .btn-primary-dark {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-brand-accent
+           bg-brand-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider
+           text-white transition-colors duration-150
+           hover:border-brand-accent-dark hover:bg-transparent hover:text-brand-accent-dark;
+  }
+
+  /* Secondary / ghost button — outline only, used for "Späť", "Naše služby" */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-line-dark-subtle
+           bg-transparent px-6 py-4 text-xs font-semibold uppercase tracking-wider
+           text-footer-text transition-colors duration-150
+           hover:border-brand-accent-dark hover:text-brand-accent-dark;
+  }
+
+  /* Bordered card — the base "article" container used for branch cards,
+     service cards, team cards, the GDPR box, the sticky form card. */
+  .card {
+    @apply border-2 border-border-strong bg-surface-card;
+  }
+
+  /* Section heading with the bottom-rule + generous margin pattern used
+     to open "Naše služby", "Prečo my", "Náš odborný tím". */
+  .section-heading {
+    @apply mb-14 inline-block border-b-2 border-border-strong pb-5
+           font-display text-[32px] font-semibold tracking-tight text-ink;
+  }
+
+  /* Small filled badge, e.g. "Vedúci agentúry" on the O nás lead card. */
+  .badge {
+    @apply inline-block bg-brand-accent px-3.5 py-1.5 text-[13px] font-semibold
+           tracking-wide text-white;
+  }
+
+  /* Uppercase eyebrow/meta label (stat captions, form field labels). */
+  .label-caption {
+    @apply text-xs font-semibold uppercase tracking-wider text-ink-subtle;
+  }
+}
