@@ -1,8 +1,17 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "Domov",
+  description:
+    "Agentúra Polák — partner poisťovne UNIQA. Poistenie, hypotéky a investície v Poprade a Kežmarku, s osobným prístupom už viac ako 20 rokov.",
+})
 </script>
 
 <template>
-  <section class="container-page py-24">
-    <p class="text-body text-ink-muted">Obsah domovskej stránky pribudne vo fáze 7.</p>
-  </section>
+  <div>
+    <LandingHero />
+    <LandingServices />
+    <LandingWhyUs />
+    <LandingTrustBar />
+    <LandingContactForm />
+  </div>
 </template>
