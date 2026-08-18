@@ -44,6 +44,11 @@ export default defineNuxtConfig({
     families: [
       { name: 'Hanken Grotesk', provider: 'google', weights: [600, 700] },
       { name: 'Inter', provider: 'google', weights: [400, 500, 600] },
+      // Loaded manually above instead (see app.head.link) — tell
+      // @nuxt/fonts to leave it alone rather than auto-generating
+      // fallback-metrics for an icon font, which it otherwise does for
+      // any font-family it finds while scanning the CSS.
+      { name: 'Material Symbols Outlined', provider: 'none' },
     ],
   },
 })

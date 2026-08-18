@@ -1,84 +1,46 @@
-/**
- * Agentúra Polák — Design System
- * ================================
- * Single source of truth for design tokens, imported once via
- * `nuxt.config.ts` (`css: ['~/assets/css/main.css']`) once Tailwind v4
- * is installed (see CLAUDE.md, Phase 2).
- *
- * Tokens below were reverse-engineered from the Claude Design prototype
- * (Kontakt.dc.html / Landing.dc.html / O-nas.dc.html) — every value maps
- * to a hex/px/font actually used in the prototype's inline styles, not a
- * guess. Where the prototype repeated the same raw value for the same
- * purpose across pages, it became one named token here.
- *
- * Visual language: flat, sharp-cornered, editorial-financial ("brutalist
- * insurance"). No border-radius, no box-shadow anywhere in the source —
- * hierarchy comes from 1–4px borders and color blocking instead. Keep
- * that discipline: don't reach for `rounded-*` or `shadow-*` utilities
- * when building components against this system.
- */
 
 @import "tailwindcss";
 
 @theme {
-  /* ---------------------------------------------------------------
-   * Color — brand
-   * Two blues carry the whole brand: a deep "institutional" blue for
-   * headings/identity, and a brighter "action" blue for anything
-   * clickable. A third, cyan-leaning accent exists only inside the
-   * dark hero/form sections (Landing) for hover/focus states.
-   * --------------------------------------------------------------- */
+
   --color-brand-primary: #004481;   /* logo, H1/H2 headings, active nav, icon accents */
   --color-brand-accent: #005baa;    /* buttons, links, badges — the "clickable" blue */
   --color-brand-accent-dark: #5fd4ff; /* hover/focus accent used only on dark surfaces */
 
-  /* ---------------------------------------------------------------
-   * Color — ink (text)
-   * --------------------------------------------------------------- */
+
   --color-ink: #191c21;         /* primary body text color (root) */
   --color-ink-muted: #414751;   /* paragraph copy, secondary text, strong borders */
   --color-ink-subtle: #727783;  /* small caps labels, meta text, placeholders */
 
-  /* ---------------------------------------------------------------
-   * Color — borders & dividers
-   * --------------------------------------------------------------- */
+
   --color-border-strong: #414751; /* 2px card/header/footer borders */
   --color-border-subtle: #c1c6d3; /* 1px internal dividers */
 
-  /* ---------------------------------------------------------------
-   * Color — surfaces (light theme, the default across all pages)
-   * --------------------------------------------------------------- */
+
   --color-surface: #f9f9ff;       /* page background */
   --color-surface-card: #ffffff;  /* card/article background */
   --color-surface-alt: #f2f3fa;   /* alternating section background, GDPR box */
 
-  /* ---------------------------------------------------------------
-   * Color — dark surfaces (Landing hero + interactive contact form)
-   * --------------------------------------------------------------- */
+
   --color-surface-dark: #1a1c1e;      /* hero section + form section background */
   --color-surface-dark-alt: #242830;  /* selected form tile background */
   --color-line-dark: #414751;         /* progress-bar track, dark section rules */
   --color-line-dark-subtle: #727783;  /* unselected form control borders */
 
-  /* ---------------------------------------------------------------
-   * Color — footer (its own near-black navy, distinct from surface-dark)
-   * --------------------------------------------------------------- */
+
   --color-footer: #001c3b;
   --color-footer-border: #074784;
   --color-footer-text: #d5e3ff;
   --color-footer-text-muted: #8dbbff;
   --color-footer-text-link: #a6c8ff;
 
-  /* ---------------------------------------------------------------
-   * Color — feedback
-   * --------------------------------------------------------------- */
+
   --color-danger: #ffb4ab; /* form validation error text (on dark bg) */
 
   /* ---------------------------------------------------------------
    * Typography
    * Hanken Grotesk = display/headings (600 & 700 only).
    * Inter = body/UI text (400/500/600). Loaded via @nuxt/fonts in
-   * Phase 2 — do not hardcode Google Fonts <link> tags in pages.
    * --------------------------------------------------------------- */
   --font-display: "Hanken Grotesk", ui-sans-serif, sans-serif;
   --font-body: "Inter", ui-sans-serif, sans-serif;
@@ -103,16 +65,13 @@
   --text-h1: 40px;           /* page H1 (Kontakt, O nás) */
   --text-h1-hero: 44px;      /* Landing hero H1 */
 
-  /* ---------------------------------------------------------------
-   * Layout
-   * --------------------------------------------------------------- */
+  /* Layout
+
   --container-max: 1280px;   /* every section wrapper caps here */
   --container-pad: 20px;     /* horizontal gutter at all breakpoints */
   --header-height: 80px;
 
-  /* ---------------------------------------------------------------
-   * Borders — this system has exactly three border weights, no radii
-   * --------------------------------------------------------------- */
+  /* Borders — this system has exactly three border weight
   --border-hairline: 1px;
   --border-default: 2px;
   --border-accent: 4px;   /* left-rule on hero text, active-nav underline */
@@ -139,6 +98,26 @@
   h4 {
     @apply font-display;
   }
+
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+  }
 }
 
 /* =====================================================================
@@ -149,6 +128,12 @@
  * same border/padding/hover combo inline.
  * ===================================================================== */
 @layer components {
+  .container-page {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+  }
+
   /* Primary CTA — filled blue, inverts to outline on hover.
      Used for every "Nezáväzný dopyt" / submit / main action button. */
   .btn-primary {
