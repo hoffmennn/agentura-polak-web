@@ -5,7 +5,7 @@
 
   --color-brand-primary: #004481;   /* logo, H1/H2 headings, active nav, icon accents */
   --color-brand-accent: #005baa;    /* buttons, links, badges — the "clickable" blue */
-  --color-brand-accent-dark: #5fd4ff; /* hover/focus accent used only on dark surfaces */
+  --color-brand-accent-dark: #bddeff; /* hover/focus accent used only on dark surfaces */
 
 
   --color-ink: #191c21;         /* primary body text color (root) */
@@ -55,6 +55,7 @@
   --text-body-sm: 15px;      /* form inputs */
   --text-body: 16px;         /* default paragraph */
   --text-body-lg: 17px;      /* step-1 form tile labels, success copy */
+  --text-lede: 18px;         /* page-intro paragraph under an H1 (Kontakt, O nás) */
   --text-h4: 18px;           /* "why us" item titles, card sub-headings */
   --text-h3: 20px;           /* GDPR/form-card headings */
   --text-h3-lg: 22px;        /* branch/service card headings */
@@ -65,23 +66,36 @@
   --text-h1: 40px;           /* page H1 (Kontakt, O nás) */
   --text-h1-hero: 44px;      /* Landing hero H1 */
 
-  /* Layout
-
+  /* ---------------------------------------------------------------
+   * Layout
+   * --------------------------------------------------------------- */
   --container-max: 1280px;   /* every section wrapper caps here */
   --container-pad: 20px;     /* horizontal gutter at all breakpoints */
   --header-height: 80px;
 
-  /* Borders — this system has exactly three border weight
+  /* ---------------------------------------------------------------
+   * Borders — this system has exactly three border weights, no radii
+   * --------------------------------------------------------------- */
   --border-hairline: 1px;
   --border-default: 2px;
   --border-accent: 4px;   /* left-rule on hero text, active-nav underline */
 
   /* ---------------------------------------------------------------
    * Motion
+   * `--ease-*` is a real Tailwind v4 theme namespace (generates
+   * `ease-{name}` utilities) — but the value below is identical to
+   * Tailwind's own default transition-timing-function, so nothing in
+   * this codebase needs to reference it explicitly.
+   * `--duration-*` is NOT a generative namespace the way `--color-*`/
+   * `--text-*` are, unlike what its parallel naming suggests — Tailwind
+   * only ships numeric `duration-*` utilities (`duration-150`,
+   * `duration-300`, …). Components use those numeric classes directly;
+   * the two values below exist purely as the documented "this is our
+   * standard hover speed / our standard form-transition speed" record.
    * --------------------------------------------------------------- */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --duration-fast: 150ms;   /* hover color/border transitions */
-  --duration-form: 300ms;   /* progress bar width transition */
+  --duration-fast: 150ms;   /* hover color/border transitions → duration-150 */
+  --duration-form: 300ms;   /* progress bar width transition → duration-300 */
 }
 
 /* =====================================================================
@@ -182,5 +196,42 @@
   /* Uppercase eyebrow/meta label (stat captions, form field labels). */
   .label-caption {
     @apply text-xs font-semibold uppercase tracking-wider text-ink-subtle;
+  }
+}
+
+/* =====================================================================
+ * Hero cycling headline (Landing) — rotates through 5 stacked <li> lines,
+ * one word-group visible at a time. Single-use but kept here rather than
+ * component-scoped so all bespoke keyframes live in one place.
+ * ===================================================================== */
+@keyframes cycle-text {
+  0%,
+  15% {
+    transform: translateY(0);
+  }
+  20%,
+  35% {
+    transform: translateY(-1.2em);
+  }
+  40%,
+  55% {
+    transform: translateY(-2.4em);
+  }
+  60%,
+  75% {
+    transform: translateY(-3.6em);
+  }
+  80%,
+  95% {
+    transform: translateY(-4.8em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-cycle-text {
+    animation: cycle-text 15s infinite;
   }
 }
