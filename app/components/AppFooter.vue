@@ -5,7 +5,7 @@
 <template>
   <footer class="border-t-2 border-border-strong bg-footer text-footer-text">
 
-    <template>
+    <template v-else>
       <div class="container-page grid gap-8 pt-14 pb-8 [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
         <div>
           <div class="mb-3 text-xl font-bold text-white font-display">AGENTÚRA POLÁK</div>
@@ -28,7 +28,7 @@
 
         <div>
           <div class="mb-3.5 text-caption font-semibold uppercase tracking-wider text-white">Urgentný kontakt</div>
-          <p class="text-label text-footer-text-link">{{ urgentPhone }}</p>
+          <p class="text-label text-footer-text-link">0901 234 567</p>
         </div>
       </div>
 
