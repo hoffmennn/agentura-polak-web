@@ -28,10 +28,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        // Material Symbols is a variable-axis icon font (wght,FILL); not
-        // reliably handled by @nuxt/fonts yet, so it stays a plain Google
-        // Fonts link. Revisit if @nuxt/fonts adds proper support.
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1',

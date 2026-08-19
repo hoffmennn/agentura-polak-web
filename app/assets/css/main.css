@@ -235,3 +235,33 @@
     animation: cycle-text 15s infinite;
   }
 }
+
+/* =====================================================================
+ * Trust-bar logo marquee (Landing) — infinite horizontal scroll. The
+ * track is rendered twice in the markup (second copy `aria-hidden`), so
+ * translating the outer flex wrapper by exactly -50% hands off seamlessly
+ * from the first copy to the second, whatever the logos' total width.
+ * ===================================================================== */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 36s linear infinite;
+  }
+
+  /* Fades the strip to transparent at both edges instead of a hard clip. */
+  .marquee-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
