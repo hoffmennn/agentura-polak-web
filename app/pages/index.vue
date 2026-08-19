@@ -11,7 +11,6 @@ useSeoMeta({
     <LandingHero />
     <LandingServices />
     <LandingWhyUs />
-    <LandingTrustBar />
     <LandingContactForm />
   </div>
 </template>
