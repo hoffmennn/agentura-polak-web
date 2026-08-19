@@ -109,8 +109,8 @@ function optionClass(selected: boolean) {
   <section id="kontaktny-formular" class="bg-surface-dark py-24 text-white">
     <div class="mx-auto max-w-[800px] px-5">
       <div class="mb-10 border-b-2 border-border-strong pb-5">
-        <h2 class="text-h1-section font-semibold tracking-tight font-display">Nezáväzný dopyt</h2>
-        <p class="mt-3 text-border-subtle">Odpovieme rýchlo — zvyčajne do {{ RESPONSE_HOURS }} hodín v pracovné dni.</p>
+        <h2 class="text-h1-section font-semibold tracking-tight font-display">Kontaktujte nás</h2>
+        <p class="mt-3 text-border-subtle">Odpovieme zvyčajne do {{ RESPONSE_HOURS }} hodín v pracovné dni.</p>
       </div>
 
       <template v-if="step !== 4">
