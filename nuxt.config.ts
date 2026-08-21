@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -8,6 +9,10 @@ export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image'],
 
   css: ['~/assets/css/main.css'],
+
+  nitro: {
+    preset: 'github_pages',
+  },
 
   vite: {
     plugins: [tailwindcss()],
@@ -28,7 +33,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/png', href: `${baseURL}favicon.png` },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1',
