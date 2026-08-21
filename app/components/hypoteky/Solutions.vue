@@ -4,7 +4,7 @@ const groups = [
     title: "Žiadosť o hypotéku",
     items: [
       "Preveríme všetky dostupné ponuky",
-      "Vypíšeme za vás žiadosti do vybraných bánk",
+      "Pomôžeme vám so žiadosťou do vybraných bánk",
       "Skontrolujeme kompletnosť dokladov predtým, než ich podáme",
     ],
   },
@@ -25,9 +25,9 @@ const groups = [
     title: "Po podpise zmluvy",
     items: [
       "Pomôžeme s čerpaním úveru a splnením podmienok banky",
-      "Ustrážime termín konca fixácie a ozveme sa 3 mesiace vopred",
+      "Pred termínom konca fixácie s vami prejdeme aktuálne možnosti",
+      "Pomôžeme vám aj s následným servisom vašej hypotéky",
       "Pri zmene situácie (narodenie dieťaťa, zmena príjmu, predaj bytu) prehodnotíme nastavenie",
-      "Zostávame vaším kontaktom aj po vyplatení",
     ],
   },
 ]

@@ -2,7 +2,7 @@
 const highlights = [
   { icon: "search", title: "Nájdeme pre vás najlepšiu ponuku" },
   { icon: "payments", title: "Bez poplatku pre klienta" },
-  { icon: "description", title: "Papierovačky vybavíme za vás" },
+  { icon: "description", title: "Finančný trh poznáme do detailu" },
 ]
 </script>
 

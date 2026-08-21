@@ -3,22 +3,22 @@ const products = [
   {
     icon: "home",
     title: "Hypotéka na kúpu nehnuteľnosti",
-    desc: "Financovanie kúpy bytu, domu alebo pozemku. Pomôžeme vybrať banku podľa vašej situácie a pripravíme kompletné podklady k žiadosti.",
+    desc: "Popis...",
   },
   {
     icon: "construction",
     title: "Stavba a rekonštrukcia",
-    desc: "Hypotéka na výstavbu domu alebo väčšiu rekonštrukciu, vrátane čerpania po etapách a komunikácie s bankou pri kontrolách stavby.",
+    desc: "Popis...",
   },
   {
     icon: "sync_alt",
     title: "Refinancovanie úveru",
-    desc: "Ak sa vám blíži koniec fixácie alebo máte drahší úver, porovnáme aktuálne ponuky a prevedieme vás celým procesom prechodu do inej banky.",
+    desc: "Popis...",
   },
   {
     icon: "payments",
-    title: "Spotrebné úvery a konsolidácia",
-    desc: "Financovanie bez záložného práva na nehnuteľnosť — na vybavenie domácnosti, auto, alebo spojenie viacerých úverov do jednej nižšej splátky.",
+    title: "Spotrebné úvery",
+    desc: "Popis...",
   },
 ]
 </script>

@@ -4,37 +4,33 @@
 const steps = [
   {
     title: "Krok 1: Nezáväzná konzultácia",
-    desc: "Stretneme sa v Poprade, Kežmarku alebo online. Zistíme, koľko potrebujete, čo si môžete dovoliť a aké máte možnosti. Odchádzate s konkrétnou predstavou, bez záväzku a bez poplatku.",
+    desc: "Stretneme sa v Poprade, Kežmarku alebo online. Preberieme vašu predstavu a aké máte možnosti. Odchádzate s ponukou, bez záväzkov a poplatku.",
   },
   {
     title: "Krok 2: Porovnanie a výber banky",
-    desc: "Prejdeme ponuky bánk, ktoré prichádzajú do úvahy práve pre vás. Predložíme vám najvýhodnejšie varianty a vysvetlíme rozdiely, nielen v sadzbe, ale aj v poplatkoch a podmienkach.",
+    desc: "Na základe vašich potrieb vyberieme vhodnú banku pre vás. Predložíme vám najvýhodnejšie varianty a vysvetlíme rozdiely, nielen v sadzbe, ale aj v poplatkoch a podmienkach.",
   },
   {
     title: "Krok 3: Príprava dokladov",
-    desc: "Dáme vám presný zoznam toho, čo treba. Doklady skontrolujeme a pripravíme kompletnú žiadosť.",
+    desc: "Pripravíme vám zoznam potrebných dokumentov. Doklady skontrolujeme a spoločne pripravíme kompletnú žiadosť.",
   },
   {
     title: "Krok 4: Podanie žiadosti a schvaľovanie",
-    desc: "Žiadosť podáme a sledujeme jej priebeh. Ak banka niečo doplní alebo spochybní, riešime to okamžite my.",
+    desc: "Žiadosť podáme a sledujeme jej priebeh. V prípade potreby doplníme potrebné informácie banke.",
   },
   {
-    title: "Krok 5: Znalecký posudok a poistenie",
-    desc: "Zabezpečíme znalca, skontrolujeme list vlastníctva, zariadime poistenie nehnuteľnosti.",
+    title: "Krok 5: Podpis zmluvy",
+    desc: "Zmluvu s vami dôklade prejdeme a vysvetlíme všetky detaily. Po podpise zmluvy poradíme zo zápisom do katastra a poistením nehnuteľností.",
   },
   {
-    title: "Krok 6: Podpis zmluvy",
-    desc: "Zmluvu s vami dôklade prejdeme a vysvetlíme všetky nejasností.",
-  },
-  {
-    title: "Krok 7: Čerpanie úveru",
+    title: "Krok 6: Čerpanie úveru",
     desc: "Pomôžeme so splnením podmienok čerpania.",
   },
 ]
 </script>
 
 <template>
-  <section class="bg-surface py-16 sm:py-20">
+  <section class="bg-surface py-8 sm:py-10">
     <div class="mx-auto max-w-[900px] px-5">
       <h2 class="section-heading">Ako to prebieha</h2>
       <p class="-mt-10 mb-10 text-body-lg italic text-ink-muted font-display">
