@@ -15,6 +15,12 @@
  * width-driven so it spans the card at any breakpoint. Both stay within
  * the card's own `overflow-hidden`, so neither can cause horizontal
  * scroll or spill past its corner.
+ *
+ * No `width`/`height` props: `src` is data-driven (a different file per
+ * branch, different intrinsic size each), and the image is
+ * `position: absolute` — taken out of document flow, so it can't cause
+ * layout shift regardless. `alt=""` is intentional too: this is a
+ * decorative watermark, not content.
  */
 defineProps<{
   src: string
@@ -23,14 +29,15 @@ defineProps<{
 </script>
 
 <template>
-  <img
+  <NuxtImg
     :src="src"
     alt=""
+    loading="lazy"
     class="pointer-events-none absolute opacity-[0.16] transition-opacity duration-150 group-hover:opacity-[0.24]"
     :class="
       variant === 'tower'
         ? 'right-0 bottom-0 h-full w-auto object-contain object-bottom'
         : 'inset-x-0 bottom-0 h-auto w-full object-contain object-bottom'
     "
-  >
+  />
 </template>

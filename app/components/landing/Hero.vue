@@ -7,11 +7,13 @@ const cyclePhrases = ["vaše financie", "vašu hypotéku", "vaše poistenie", "v
 <template>
   <section class="relative overflow-hidden border-b-2 border-border-strong bg-surface-dark py-24 text-white sm:py-28">
     <div class="absolute inset-0 z-0">
-      <img
+      <NuxtImg
         src="/hero.png"
         alt="Panoramatický výhľad na Poprad a Vysoké Tatry"
+        width="1376"
+        height="465"
         class="h-full w-full object-cover"
-      >
+      />
       <div class="absolute inset-0 bg-[rgba(20,22,25,0.68)]" />
 
     </div>

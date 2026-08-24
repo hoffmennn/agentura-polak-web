@@ -8,12 +8,12 @@
  * it instead of the page's 1280px cap.
  */
 const banks = [
-  { name: "ČSOB", src: "/banks/csob.png" },
-  { name: "Raiffeisen Bank", src: "/banks/poistenie.png" },
-  { name: "Prima banka", src: "/banks/prima.png" },
-  { name: "Slovenská sporiteľňa", src: "/banks/slsp.png" },
-  { name: "Tatra banka", src: "/banks/tatrav.png" },
-  { name: "VÚB banka", src: "/banks/vub.png" },
+  { name: "ČSOB", src: "/banks/csob.png", width: 1585, height: 1313 },
+  { name: "Raiffeisen Bank", src: "/banks/poistenie.png", width: 1562, height: 562 },
+  { name: "Prima banka", src: "/banks/prima.png", width: 1359, height: 409 },
+  { name: "Slovenská sporiteľňa", src: "/banks/slsp.png", width: 468, height: 167 },
+  { name: "Tatra banka", src: "/banks/tatrav.png", width: 189, height: 181 },
+  { name: "VÚB banka", src: "/banks/vub.png", width: 1329, height: 857 },
 ]
 </script>
 
@@ -21,24 +21,30 @@ const banks = [
   <div class="marquee-fade relative w-full overflow-hidden">
     <div class="flex w-max items-center gap-10 animate-marquee hover:[animation-play-state:paused]">
       <div class="flex shrink-0 items-center gap-10">
-        <img
+        <NuxtImg
           v-for="bank in banks"
           :key="bank.name"
           :src="bank.src"
           :alt="bank.name"
+          :width="bank.width"
+          :height="bank.height"
+          loading="lazy"
           class="h-8 w-auto shrink-0 object-contain"
-        >
+        />
       </div>
       <!-- Duplicate pass for the seamless loop — hidden from the a11y
            tree so screen readers don't hear every bank name twice. -->
       <div class="flex shrink-0 items-center gap-10" aria-hidden="true">
-        <img
+        <NuxtImg
           v-for="bank in banks"
           :key="'dup-' + bank.name"
           :src="bank.src"
           alt=""
+          :width="bank.width"
+          :height="bank.height"
+          loading="lazy"
           class="h-8 w-auto shrink-0 object-contain"
-        >
+        />
       </div>
     </div>
   </div>

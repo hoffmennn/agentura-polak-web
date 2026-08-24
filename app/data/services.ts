@@ -4,6 +4,8 @@ export interface ServiceDef {
   slug: string
   icon: string
   image: string
+  imageWidth: number
+  imageHeight: number
   title: string
   description: string
   rows: string[][]
@@ -17,6 +19,8 @@ export const services: ServiceDef[] = [
     slug: "hypoteky",
     icon: "real_estate_agent",
     image: "/services/mortage2.jpg",
+    imageWidth: 1024,
+    imageHeight: 683,
     title: "Hypotéky a úvery",
     description: "Porovnáme ponuky všetkých bánk na Slovensku a vybavíme papierovačky za vás.",
     rows: [
@@ -32,6 +36,8 @@ export const services: ServiceDef[] = [
     slug: "poistenie",
     icon: "shield_person",
     image: "/services/insurance.jpg",
+    imageWidth: 2304,
+    imageHeight: 1536,
     title: "Poistenie",
     description: "Ochrana toho, na čom vám záleží — od auta po zdravie.",
     rows: [
@@ -45,6 +51,8 @@ export const services: ServiceDef[] = [
     slug: "financie",
     icon: "trending_up",
     image: "/services/invest.jpg",
+    imageWidth: 3000,
+    imageHeight: 2001,
     title: "Investície a sporenie",
     description: "Aby peniaze neležali na účte a nestrácali hodnotu.",
     rows: [["II. a III. dôchodkový pilier", "Pravidelné investovanie"], ["Sporenie na bývanie a na deti"]],

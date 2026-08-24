@@ -28,7 +28,13 @@ useSeoMeta({
 
     <section class="container-page pb-12">
       <div class="card relative min-h-[280px] overflow-hidden sm:min-h-[380px]">
-        <img :src="svc.image" :alt="svc.title" class="absolute inset-0 h-full w-full object-cover">
+        <NuxtImg
+          :src="svc.image"
+          :alt="svc.title"
+          :width="svc.imageWidth"
+          :height="svc.imageHeight"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
       </div>
     </section>
 

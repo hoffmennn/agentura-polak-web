@@ -64,7 +64,7 @@ onBeforeUnmount(() => document.removeEventListener("click", onClickOutside))
   <header ref="headerEl" class="sticky top-0 z-50 border-b-2 border-border-strong bg-surface">
     <div class="container-page flex h-20 items-center justify-between gap-3">
       <NuxtLink to="/" class="flex flex-col gap-1 leading-tight no-underline">
-        <img src="/logo.png" alt="Agentúra Polák" class="h-14 w-auto lg:h-16">
+        <NuxtImg src="/logo.png" alt="Agentúra Polák" width="870" height="354" class="h-14 w-auto lg:h-16" />
       </NuxtLink>
 
       <!-- Desktop nav -->

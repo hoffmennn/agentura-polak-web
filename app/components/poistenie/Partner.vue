@@ -1,13 +1,16 @@
 <script setup lang="ts">
 /** Official-partner strip — UNIQA logo (already in public/, byte-identical
- * to the design source's assets/uniqa-logo.svg) + a short credibility blurb. */
+ * to the design source's assets/uniqa-logo.svg) + a short credibility blurb.
+ * SVG, so it can't go through <NuxtImg> — resolved via useAssetUrl instead
+ * so it still respects app.baseURL under the GitHub Pages subpath. */
+const assetUrl = useAssetUrl()
 </script>
 
 <template>
   <section class="border-b-2 border-border-strong bg-surface-card py-16 sm:py-20">
     <div class="mx-auto flex max-w-[1000px] flex-wrap items-center gap-10 px-5 sm:gap-12">
       <div class="flex shrink-0 items-center justify-center">
-        <img src="/uniqa-logo.svg" alt="UNIQA" class="h-[110px] w-auto sm:h-[130px]">
+        <img :src="assetUrl('/uniqa-logo.svg')" alt="UNIQA" loading="lazy" class="h-[110px] w-auto sm:h-[130px]">
       </div>
       <div class="flex-1 basis-[400px]">
         <h2 class="mb-3.5 text-h3-lg font-semibold tracking-tight font-display">

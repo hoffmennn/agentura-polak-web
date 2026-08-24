@@ -13,7 +13,7 @@ const checklist = [
 <template>
   <section class="relative overflow-hidden border-b-2 border-border-strong py-24 text-white sm:py-32">
     <div class="absolute inset-0 z-0">
-      <img src="/services/insurance.jpg" alt="Poradca UNIQA" class="h-full w-full object-cover">
+      <NuxtImg src="/services/insurance.jpg" alt="Poradca UNIQA" width="2304" height="1536" class="h-full w-full object-cover" />
       <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,22,25,0.55)_0%,rgba(20,22,25,0.82)_100%)]" />
     </div>
 

@@ -88,11 +88,14 @@ onMounted(() => {
             </div>
 
             <div class="relative order-1 min-h-[220px] overflow-hidden lg:order-2 lg:min-h-full">
-              <img
+              <NuxtImg
                 :src="svc.image"
                 :alt="svc.title"
+                :width="svc.imageWidth"
+                :height="svc.imageHeight"
+                loading="lazy"
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-              >
+              />
             </div>
           </div>
         </article>

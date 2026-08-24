@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NUXT_APP_BASE_URL: /agentura-polak-web/
+      NUXT_PUBLIC_SITE_URL: https://hoffmennn.github.io
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
