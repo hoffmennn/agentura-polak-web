@@ -1,9 +1,5 @@
 <script setup lang="ts">
-/**
- * "Tri veci, ktoré riešime" — same flat bg-brand-primary tile pattern (and
- * hover:bg-brand-accent transition) as poistenie/Coverage.vue, 3 fixed
- * columns instead of a wrapping grid since there are exactly three.
- */
+
 const tiles = [
   {
     icon: "account_balance",
@@ -35,7 +31,7 @@ const tiles = [
 <template>
   <section class="bg-surface-card py-16 sm:py-20">
     <div class="container-page">
-      <h2 class="section-heading">Tri veci, ktoré riešime</h2>
+      <h2 class="section-heading">S čím vám vieme pomôcť</h2>
 
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
         <div

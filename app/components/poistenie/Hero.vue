@@ -19,7 +19,7 @@ const checklist = [
 
     <div class="container-page relative z-10">
       <h1 class="mb-3 max-w-[780px] text-[40px] leading-[1.1] font-bold tracking-tight font-display sm:text-[48px]">
-        Poistenie UNIQA v Poprade a Kežmarku
+        Poistenie UNIQA
       </h1>
       <p class="mb-5 text-h4 font-semibold text-brand-accent-dark font-display">
         Sme tu pre vás.

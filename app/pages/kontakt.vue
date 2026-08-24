@@ -10,14 +10,14 @@ useSeoMeta({
 
 <template>
   <div>
-    <section class="container-page pt-20 pb-12">
+    <section class="container-page pt-10 pb-12">
       <div class="max-w-[760px] border-l-4 border-brand-primary pl-6">
         <h1 class="mb-4 text-h1 font-bold tracking-tight text-brand-primary font-display">Sme tu pre vás</h1>
         <p class="text-lede leading-relaxed text-ink-muted">Kontaktujte nás telefonicky alebo vyplňte formulár.</p>
       </div>
     </section>
 
-    <section class="container-page grid grid-cols-1 gap-6 py-16 md:grid-cols-2">
+    <section class="container-page grid grid-cols-1 gap-6 py-4 md:grid-cols-2">
       <article v-for="b in branches" :key="b.slug" class="card overflow-hidden">
         <!-- Text content + silhouette watermark share this zone only —
              kept separate from the map panel below so the map can never

@@ -19,8 +19,16 @@ const banks = [
 
 <template>
   <div class="marquee-fade relative w-full overflow-hidden">
-    <div class="flex w-max items-center gap-10 animate-marquee hover:[animation-play-state:paused]">
-      <div class="flex shrink-0 items-center gap-10">
+    <!-- No `gap-*` on this wrapper or the two groups below — the
+         translateX(-50%) loop only lines up seamlessly if each group's
+         rendered width already includes its own trailing spacing (via
+         `mr-10` on every image, including the last). A `gap` here as well
+         as inside each group would add an extra gap between the two
+         groups on top of each group's internal gaps, throwing off the
+         -50% midpoint by half that extra gap and producing a periodic
+         jump once per loop. -->
+    <div class="flex w-max items-center animate-marquee hover:[animation-play-state:paused]">
+      <div class="flex shrink-0 items-center">
         <NuxtImg
           v-for="bank in banks"
           :key="bank.name"
@@ -28,13 +36,17 @@ const banks = [
           :alt="bank.name"
           :width="bank.width"
           :height="bank.height"
-          loading="lazy"
-          class="h-8 w-auto shrink-0 object-contain"
+          class="mr-10 h-8 w-auto shrink-0 object-contain"
         />
       </div>
       <!-- Duplicate pass for the seamless loop — hidden from the a11y
-           tree so screen readers don't hear every bank name twice. -->
-      <div class="flex shrink-0 items-center gap-10" aria-hidden="true">
+           tree so screen readers don't hear every bank name twice.
+           Loaded eagerly like the first pass: this strip only ever moves
+           via a CSS transform (no real scroll), which native
+           `loading="lazy"` doesn't track — logos outside the initial
+           layout viewport would never fire their fetch, leaving them
+           permanently blank once the animation scrolls them into view. -->
+      <div class="flex shrink-0 items-center" aria-hidden="true">
         <NuxtImg
           v-for="bank in banks"
           :key="'dup-' + bank.name"
@@ -42,8 +54,7 @@ const banks = [
           alt=""
           :width="bank.width"
           :height="bank.height"
-          loading="lazy"
-          class="h-8 w-auto shrink-0 object-contain"
+          class="mr-10 h-8 w-auto shrink-0 object-contain"
         />
       </div>
     </div>

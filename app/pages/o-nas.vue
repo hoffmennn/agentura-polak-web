@@ -48,7 +48,6 @@ const team = [
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-[5fr_7fr]">
         <PhotoPlaceholder class="min-h-[420px] w-full border-2 border-border-strong" />
         <div class="card flex flex-col justify-center p-10">
-          <span class="badge mb-5 self-start">Vedúci agentúry</span>
           <h2 class="mb-4 text-h2-lg font-semibold font-display">Ing. Matúš Polák</h2>
           <p class="mb-6 leading-relaxed text-ink-muted">
             Popis...

@@ -1,10 +1,9 @@
 <script setup lang="ts">
 const checkItems = [
-  "Či máte druhý pilier a kde — a čo pre vás jeho nastavenie znamená",
-  "V akom fonde máte peniaze — a či to zodpovedá vášmu veku a horizontu",
-  "Či vám zamestnávateľ prispieva na tretí pilier — a či ten príspevok naozaj čerpáte",
+  "Či máte druhý pilier založený",
+  "V akom fonde máte peniaze, či to zodpovedá vášmu veku a horizontu",
+  "Či vám zamestnávateľ prispieva na tretí pilier a či ten príspevok naozaj čerpáte",
   "Či si uplatňujete daňovú úľavu, na ktorú máte nárok",
-  "Čo z toho má zmysel nechať tak — nie všetko treba meniť",
 ]
 </script>
 
@@ -13,8 +12,7 @@ const checkItems = [
     <div class="mx-auto max-w-[820px] px-5">
       <h2 class="mb-4 text-h1-section font-semibold tracking-tight font-display">Poradíme vám </h2>
       <p class="mb-6 leading-relaxed text-ink-muted">
-        Väčšina ľudí má dôchodkové sporenie nastavené kedysi, často ani nevie kde a v čom. Sadneme si a spolu
-        zistíme:
+        Pomôžeme vám nastaviť optimálné riešenie pre vaše financie:
       </p>
 
       <ul class="m-0 mb-6 flex list-none flex-col gap-3 p-0">
@@ -32,7 +30,7 @@ const checkItems = [
         <h3 class="mb-2 text-body-lg font-semibold font-display">Čo si priniesť</h3>
         <p class="text-body-sm leading-relaxed text-ink-muted">
           Ročný výpis z druhého piliera · zmluvu o treťom pilieri, ak ju máte · občiansky preukaz. Ak nič z toho
-          nemáte, príďte aj tak — poradíme, ako to zistiť.
+          nemáte, príďte aj tak, poradíme ako to zistiť.
         </p>
       </div>
     </div>

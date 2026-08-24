@@ -14,8 +14,7 @@
         výdavkom v rozsahu, ktorý stanovuje zákon — a pre zamestnanca peniaze, ktoré by inak nikdy nedostal.
       </p>
       <p class="mb-7 leading-relaxed text-ink-muted">
-        Pomôžeme vám benefit nastaviť, pripraviť zamestnávateľskú zmluvu a prísť zamestnancom osobne vysvetliť, čo
-        z toho majú.
+        Pomôžeme vám benefit nastaviť, pripraviť zamestnávateľskú zmluvu a prísť zamestnancom osobne vysvetliť tieto benefity.
       </p>
       <a href="#kontaktny-formular" class="btn-primary">Chcem informácie pre firmu</a>
     </div>
