@@ -32,8 +32,7 @@ const cyclePhrases = ["vaše financie", "vašu hypotéku", "vaše poistenie", "v
         </h1>
 
         <p class="mb-10 max-w-[520px] border-l-4 border-brand-accent-dark pl-6 text-body-lg leading-7 text-border-subtle">
-          Už viac ako 20 rokov pomáhame ľuďom v Poprade a Kežmarku rozhodovať sa o peniazoch. Osobne, zrozumiteľne,
-          bez záväzku.
+          Viac než 20 rokov skúseností vo financiách a poisťovníctve. Osobné a zrozumiteľné poradenstvo, ktoré vám šetrí peniaze aj čas.
         </p>
 
         <div class="flex flex-wrap gap-4">
