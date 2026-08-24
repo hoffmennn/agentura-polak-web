@@ -32,7 +32,7 @@ const cyclePhrases = ["vaše financie", "vašu hypotéku", "vaše poistenie", "v
         </h1>
 
         <p class="mb-10 max-w-[520px] border-l-4 border-brand-accent-dark pl-6 text-body-lg leading-7 text-border-subtle">
-          Viac než 20 rokov skúseností vo financiách a poisťovníctve. Osobné a zrozumiteľné poradenstvo, ktoré vám šetrí peniaze aj čas.
+          Viac než 20 rokov skúseností. Osobné a zrozumiteľné poradenstvo, ktoré vám šetrí peniaze aj čas.
         </p>
 
         <div class="flex flex-wrap gap-4">
