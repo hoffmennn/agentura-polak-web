@@ -97,7 +97,7 @@ const currentYear = new Date().getFullYear()
           <span aria-hidden="true">·</span>
           <span>IČO: 56174896</span>
           <span aria-hidden="true">·</span>
-          <span>DIČ: 12345678</span>
+          <span>DIČ: 2122230649</span>
           <span aria-hidden="true">·</span>
           <span>{{ companyAddress }}</span>
           <span aria-hidden="true">·</span>
